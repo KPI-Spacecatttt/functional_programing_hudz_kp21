@@ -1,0 +1,28 @@
+# Ignore build output
+bin/
+obj/
+
+# Ignore packages
+packages/
+*.nupkg
+*.snupkg
+
+# Ignore user-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.log
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+*.sln.docstates
+
+# Ignore F# interactive history
+.fsi/
+.fsx/
