@@ -13,6 +13,7 @@ module Visitor =
         { Name: string
           Age: int
           Gender: Gender }
+
         interface INamed with
             member this.Name = this.Name
 
@@ -33,7 +34,8 @@ module Trainer =
           Age: int
           ExperienceYears: int
           Specialization: string }
-          interface INamed with
+
+        interface INamed with
             member this.Name = this.Name
 
     let create name age exp spec =
@@ -55,7 +57,8 @@ module Equipment =
         { Name: string
           Type: string
           IsAvailable: bool }
-          interface INamed with
+
+        interface INamed with
             member this.Name = this.Name
 
     let create name etype isAvailable =
@@ -121,7 +124,8 @@ module Gym =
           Visitors: Visitor.Visitor list
           Equipment: Equipment.Equipment list
           Subscriptions: Subscription.Subscription list }
-          interface INamed with
+
+        interface INamed with
             member this.Name = this.Name
 
     let create name location trainers visitors equipment subscriptions =
@@ -173,7 +177,7 @@ module Main =
     [<EntryPoint>]
     let main (argv: string array) =
 
-        printfn "Creating entities:"
+        printfn "Creating entities..."
         let vlad = Visitor.create "Vlad" 25 Gender.Male
         let oleg = Trainer.create "Oleg" 35 10 "Bodybuilding"
         let dumbbell = Equipment.create "Dumbbell (20kg)" "Weight" true
@@ -243,8 +247,5 @@ module Main =
 
         let notFound = findByName "Someone Not Here" fitFun.Visitors
         printfn "Not found: %A" notFound // None
-
-
-
 
         0
