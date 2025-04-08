@@ -91,7 +91,7 @@ let wayToLockerRoom visitor =
 let calculatePrice months =
     fun pricePerMonth -> months * pricePerMonth
 
-let calculatePriceByYear pricePerMonth = calculatePrice 12 pricePerMonth
+let calculatePriceByYear  = calculatePrice 12
 
 // Tuple
 let getDataBySubscription subscription =
