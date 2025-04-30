@@ -2,8 +2,8 @@
 
 // Only 2 gender
 type Gender =
-    | Male
-    | Female
+    | Male = 0
+    | Female = 1
 
 // Define an interface for items with a Name property
 type INamed =
@@ -38,8 +38,9 @@ module Visitor =
 
     let getLockerRoomDirection visitor =
         match visitor.Gender with
-        | Male -> "Go to the left locker room"
-        | Female -> "Go to the right locker room"
+        | Gender.Male -> "Go to the left locker room"
+        | Gender.Female -> "Go to the right locker room"
+        | _ -> "Unknown gender"
 
 
 module Trainer =
@@ -203,7 +204,7 @@ type GymMembership =
     val mutable private isActive : bool
 
 
-// Constructors
+    // Constructors
     new(id: int, start: System.DateTime, durationMonths: int) =
         { memberId = id
           startDate = start
